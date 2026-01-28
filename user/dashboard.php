@@ -25,6 +25,7 @@ if (isset($_POST['kirim'])) {
 <link rel="stylesheet" href="../assets/style.css">
 
 <div class="container">
+    <a href="../auth/logout.php">Logout</a>
 <h1>Dashboard Anggota</h1>
 
 <?php while ($k = mysqli_fetch_assoc($kegiatan)) { ?>
