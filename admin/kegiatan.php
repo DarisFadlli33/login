@@ -16,7 +16,6 @@ if (isset($_POST['tambah'])) {
     header("Location: kegiatan.php");
 }
 
-/* UPDATE KEGIATAN */
 if (isset($_POST['update'])) {
     mysqli_query($conn, "UPDATE kegiatan SET
         judul='$_POST[judul]',
@@ -27,7 +26,7 @@ if (isset($_POST['update'])) {
     header("Location: kegiatan.php");
 }
 
-/* DELETE KEGIATAN */
+
 if (isset($_GET['delete'])) {
     mysqli_query($conn, "DELETE FROM kegiatan WHERE id=$_GET[delete]");
     header("Location: kegiatan.php");
@@ -44,7 +43,7 @@ $kegiatan = mysqli_query($conn, "SELECT * FROM kegiatan");
 
 <h1>Manajemen Kegiatan</h1>
 
-<!-- TAMBAH KEGIATAN -->
+
 <div class="card">
 <h3>Tambah Kegiatan</h3>
 <form method="POST">
@@ -55,7 +54,7 @@ $kegiatan = mysqli_query($conn, "SELECT * FROM kegiatan");
 </form>
 </div>
 
-<!-- LIST KEGIATAN -->
+
 <?php while ($k = mysqli_fetch_assoc($kegiatan)) { ?>
 <div class="card">
 
